@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/MultiServer-Go/internal/entity"
-	"github.com/MultiServer-Go/pkg/events"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
+	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
 )
 
 type OrderInputDTO struct {

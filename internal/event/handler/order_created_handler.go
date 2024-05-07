@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/MultiServer-Go/pkg/events"
+	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
 	"github.com/streadway/amqp"
 )
 

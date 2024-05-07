@@ -1,4 +1,4 @@
-module github.com/MultiServer-Go
+module github.com/FelpsCorrea/MultiServer-Go
 
 go 1.19
 

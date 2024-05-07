@@ -7,8 +7,8 @@ package graph
 import (
 	"context"
 
-	"github.com/MultiServer-Go/internal/infra/graph/model"
-	"github.com/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/graph/model"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
 )
 
 // CreateOrder is the resolver for the createOrder field.

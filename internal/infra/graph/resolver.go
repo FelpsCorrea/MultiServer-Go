@@ -1,6 +1,6 @@
 package graph
 
-import "github.com/MultiServer-Go/internal/usecase"
+import "github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
 
 // This file will not be regenerated automatically.
 //

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/MultiServer-Go/internal/entity"
-	"github.com/MultiServer-Go/internal/usecase"
-	"github.com/MultiServer-Go/pkg/events"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
 )
 
 type WebOrderHandler struct {

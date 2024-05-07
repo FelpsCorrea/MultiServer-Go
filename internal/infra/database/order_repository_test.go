@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/MultiServer-Go/internal/entity"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
 	"github.com/stretchr/testify/suite"
 
 	// sqlite3

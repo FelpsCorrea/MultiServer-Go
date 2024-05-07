@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"github.com/MultiServer-Go/internal/infra/grpc/pb"
-	"github.com/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/grpc/pb"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
 )
 
 type OrderService struct {

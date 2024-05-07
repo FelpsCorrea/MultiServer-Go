@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql"
 
-	"github.com/MultiServer-Go/internal/entity"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
 )
 
 type OrderRepository struct {

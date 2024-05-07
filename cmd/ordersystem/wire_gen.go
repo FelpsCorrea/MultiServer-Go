@@ -8,12 +8,12 @@ package main
 
 import (
 	"database/sql"
-	"github.com/MultiServer-Go/internal/entity"
-	"github.com/MultiServer-Go/internal/event"
-	"github.com/MultiServer-Go/internal/infra/database"
-	"github.com/MultiServer-Go/internal/infra/web"
-	"github.com/MultiServer-Go/internal/usecase"
-	"github.com/MultiServer-Go/pkg/events"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/event"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/database"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/web"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
 	"github.com/google/wire"
 )
 
