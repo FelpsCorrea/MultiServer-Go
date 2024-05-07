@@ -5,6 +5,7 @@ import (
 
 	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/grpc/pb"
 	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase/dto"
 )
 
 type OrderService struct {
@@ -19,7 +20,7 @@ func NewOrderService(createOrderUseCase usecase.CreateOrderUseCase) *OrderServic
 }
 
 func (s *OrderService) CreateOrder(ctx context.Context, in *pb.CreateOrderRequest) (*pb.CreateOrderResponse, error) {
-	dto := usecase.OrderInputDTO{
+	dto := dto.OrderInputDTO{
 		ID:    in.Id,
 		Price: float64(in.Price),
 		Tax:   float64(in.Tax),

@@ -8,12 +8,12 @@ import (
 	"context"
 
 	"github.com/FelpsCorrea/MultiServer-Go/internal/infra/graph/model"
-	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase/dto"
 )
 
 // CreateOrder is the resolver for the createOrder field.
-func (r *mutationResolver) CreateOrder(ctx context.Context, input *model.OrderInput) (*model.Order, error) {
-	dto := usecase.OrderInputDTO{
+func (r *mutationResolver) CreateOrder(ctx context.Context, input model.OrderInput) (*model.Order, error) {
+	dto := dto.OrderInputDTO{
 		ID:    input.ID,
 		Price: float64(input.Price),
 		Tax:   float64(input.Tax),
@@ -30,7 +30,29 @@ func (r *mutationResolver) CreateOrder(ctx context.Context, input *model.OrderIn
 	}, nil
 }
 
+// Orders is the resolver for the orders field.
+func (r *queryResolver) Orders(ctx context.Context) ([]*model.Order, error) {
+	orders, err := r.ListOrdersUseCase.Execute()
+	if err != nil {
+		return nil, err
+	}
+	var ordersModel []*model.Order
+	for _, order := range orders {
+		ordersModel = append(ordersModel, &model.Order{
+			ID:         order.ID,
+			Price:      float64(order.Price),
+			Tax:        float64(order.Tax),
+			FinalPrice: float64(order.FinalPrice),
+		})
+	}
+	return ordersModel, nil
+}
+
 // Mutation returns MutationResolver implementation.
 func (r *Resolver) Mutation() MutationResolver { return &mutationResolver{r} }
 
+// Query returns QueryResolver implementation.
+func (r *Resolver) Query() QueryResolver { return &queryResolver{r} }
+
 type mutationResolver struct{ *Resolver }
+type queryResolver struct{ *Resolver }

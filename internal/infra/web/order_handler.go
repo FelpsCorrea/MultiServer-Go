@@ -6,6 +6,7 @@ import (
 
 	"github.com/FelpsCorrea/MultiServer-Go/internal/entity"
 	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
+	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase/dto"
 	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
 )
 
@@ -28,7 +29,7 @@ func NewWebOrderHandler(
 }
 
 func (h *WebOrderHandler) Create(w http.ResponseWriter, r *http.Request) {
-	var dto usecase.OrderInputDTO
+	var dto dto.OrderInputDTO
 	err := json.NewDecoder(r.Body).Decode(&dto)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)

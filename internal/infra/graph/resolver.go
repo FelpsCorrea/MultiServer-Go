@@ -8,4 +8,5 @@ import "github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
 
 type Resolver struct {
 	CreateOrderUseCase usecase.CreateOrderUseCase
+	ListOrdersUseCase  usecase.ListOrdersUseCase
 }
