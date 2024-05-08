@@ -12,3 +12,7 @@ type OrderOutputDTO struct {
 	Tax        float64 `json:"tax"`
 	FinalPrice float64 `json:"final_price"`
 }
+
+type GetOrderInputDTO struct {
+	ID string `json:"id"`
+}

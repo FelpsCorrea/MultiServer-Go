@@ -8,6 +8,7 @@ import (
 	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase"
 	"github.com/FelpsCorrea/MultiServer-Go/internal/usecase/dto"
 	"github.com/FelpsCorrea/MultiServer-Go/pkg/events"
+	"github.com/go-chi/chi/v5"
 )
 
 type WebOrderHandler struct {
@@ -38,6 +39,21 @@ func (h *WebOrderHandler) Create(w http.ResponseWriter, r *http.Request) {
 
 	createOrder := usecase.NewCreateOrderUseCase(h.OrderRepository, h.OrderCreatedEvent, h.EventDispatcher)
 	output, err := createOrder.Execute(dto)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	err = json.NewEncoder(w).Encode(output)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
+
+func (h *WebOrderHandler) Get(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	getOrder := usecase.NewGetOrderUseCase(h.OrderRepository)
+	output, err := getOrder.Execute(dto.GetOrderInputDTO{ID: id})
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
